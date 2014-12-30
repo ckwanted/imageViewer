@@ -5,7 +5,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileInputStream;
 import java.util.ArrayList;
+import javax.imageio.ImageIO;
 import view.ui.ImageDisplay;
 
 public class SwingFrame extends JFrame {
@@ -19,6 +21,7 @@ public class SwingFrame extends JFrame {
 
     public SwingFrame()  {
         setTitle("Image Viewer");
+        this.loadIcon();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         add(createDisplay());
         add(createToolbar(), BorderLayout.SOUTH);
@@ -91,5 +94,13 @@ public class SwingFrame extends JFrame {
     
     private interface IdleTask {
         public void execute();
+    }
+    
+    private void loadIcon() {
+        try {
+            setIconImage(ImageIO.read(new FileInputStream("photo.png")));
+        } catch (Exception exception) {
+            System.out.println("Error ico not found ...");
+        }
     }
 }
