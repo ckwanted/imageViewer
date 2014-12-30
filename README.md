@@ -1,5 +1,11 @@
 Image Viewer
 ===========
+<h3>Application</h3>
+<ul>
+  <li>SwingApp</li>
+</ul>
+<hr/>
+
 <h3>Control</h3>
 <ul>
   <li>Command</li>
